@@ -9,7 +9,10 @@ authors = [{name = "autor1", email = "correo@correo.com"}]
 description = "Descripción del proyecto"
 requires-python = ">3.8"
 dependencies = [
-    "numpy"
+    "matplotlib>=3.7.5",
+    "numpy",
+    "pandas>=2.0.3",
+    "scikit-learn>=1.3.2",
 ]
 
 [tool.setuptools.packages.find]
