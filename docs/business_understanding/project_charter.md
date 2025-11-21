@@ -2,57 +2,56 @@
 
 ## Nombre del Proyecto
 
-[Nombre del proyecto aquí]
+Pronóstico del clima de Munich básado en indicadores meteorológicos.
 
 ## Objetivo del Proyecto
 
-[Descripción breve del objetivo del proyecto y por qué es importante]
+Desarrollar modelos predictivos de temperatura basados en Machine Learning utilizando datos meteorológicos de alta resolución, y así, identificar patrones microclimáticos locales.
 
 ## Alcance del Proyecto
 
 ### Incluye:
 
-- [Descripción de los datos disponibles]
-- [Descripción de los resultados esperados]
-- [Criterios de éxito del proyecto]
+- Se tienen datos históricos de indicadores meteorológicos de 2020 tomados cada 10 minutos. 
+- Obtener datos de temperatura coherentes con los valores medidos.
+- Se busca pronosticar adecuadamente la temperatura de los días posteriores basado en información de los días o semanas previas.
 
 ### Excluye:
 
-- [Descripción de lo que no está incluido en el proyecto]
+- Información anterior o posterior al 2020.
 
 ## Metodología
 
-[Descripción breve de la metodología que se utilizará para llevar a cabo el proyecto]
+Se empleará un enfoque secuencial de Deep Learning. Para ello se comparará entre las arquitecturas de RNN (Redes Neuronales Recurrentes), LSTM (Long Short-Term Memory), GRU y Time-Series Transformers, para los modelos de los cuales se parte desde cero, y se comparará con los resultados generados por un modelos preentrenado cómo Prophet. Estos serán evaluados bajo críterios como Walk-Fordward Validation para un correcto entendimiento de las series de tiempo.
 
 ## Cronograma
 
 | Etapa | Duración Estimada | Fechas |
 |------|---------|-------|
-| Entendimiento del negocio y carga de datos | 2 semanas | del 1 de mayo al 15 de mayo |
-| Preprocesamiento, análisis exploratorio | 4 semanas | del 16 de mayo al 15 de junio |
-| Modelamiento y extracción de características | 4 semanas | del 16 de junio al 15 de julio |
-| Despliegue | 2 semanas | del 16 de julio al 31 de julio |
-| Evaluación y entrega final | 3 semanas | del 1 de agosto al 21 de agosto |
+| Entendimiento del negocio y carga de datos | 1 semana | del 17 de noviembre al 23 de noviembre |
+| Preprocesamiento, análisis exploratorio | 1 semana | del 24 de noviembre al 30 de noviembre |
+| Modelamiento y extracción de características | 1 semana | del 1 de diciembre al 7 de diciembre |
+| Despliegue | 1 semana | del 8 de diciembre al 13 de diciembre |
+| Evaluación y entrega final | 1 semana | del 8 de diciembre al 13 de diciembre |
 
 Hay que tener en cuenta que estas fechas son de ejemplo, estas deben ajustarse de acuerdo al proyecto.
 
 ## Equipo del Proyecto
 
-- [Nombre y cargo del líder del proyecto]
-- [Nombre y cargo de los miembros del equipo]
+- Santiago Ruiz Rozo <sruiz899@gmail.com>
+- Pablo Alejandro Reyes Granados <alejogranados229@gmail.com>
+- Kevin Andrés Martínez Martínez <kevinmartinez.ingbiom@gmail.com>
 
 ## Presupuesto
 
-[Descripción del presupuesto asignado al proyecto]
+N/A
 
 ## Stakeholders
 
-- [Nombre y cargo de los stakeholders del proyecto]
-- [Descripción de la relación con los stakeholders]
-- [Expectativas de los stakeholders]
+- Jorge E. Camargo, PhD
+- Profesor del modulo de **Metodologías Ágiles para el Desarrollo de Proyectos con Machine Learning**
 
 ## Aprobaciones
 
-- [Nombre y cargo del aprobador del proyecto]
-- [Firma del aprobador]
-- [Fecha de aprobación]
+- Jorge E. Camargo, PhD
+
