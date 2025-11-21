@@ -6,7 +6,7 @@ Pronóstico del clima de Munich básado en indicadores meteorológicos.
 
 ## Objetivo del Proyecto
 
-Desarrollar modelos predictivos de temperatura basados en Machine Learning utilizando datos meteorológicos de alta resolución, y así, identificar patrones microclimáticos locales.
+Desarrollar modelos predictivos de temperatura basados en Machine Learning utilizando datos meteorológicos de alta resolución, y así, identificar patrones microclimáticos locales. El pronostico del clima por medio de modelos de Machine Learning puede beneficiar a noticieros locales, navegantes y al público en general, ya que pueden ser más robustos y son capaces de identificar más patrones que los métodos tradicionales.
 
 ## Alcance del Proyecto
 
@@ -18,7 +18,7 @@ Desarrollar modelos predictivos de temperatura basados en Machine Learning utili
 
 ### Excluye:
 
-- Información anterior o posterior al 2020.
+- No se cuenta con información anterior o posterior al 2020.
 
 ## Metodología
 
