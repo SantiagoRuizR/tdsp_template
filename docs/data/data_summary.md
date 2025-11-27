@@ -22,6 +22,10 @@ Variables binarias: raining
 
 Variables derivadas: Tpot, VPdef, Tlog
 
+**Valores faltantes**
+
+No se observan valores faltantes.
+
 En esta sección se presenta un resumen general de los datos. Se describe el número total de observaciones, variables, el tipo de variables, la presencia de valores faltantes y la distribución de las variables.
 
 ## Resumen de calidad de los datos
