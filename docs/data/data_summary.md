@@ -123,9 +123,11 @@ El análisis revela que:
 
 Las relaciones más fuertes observadas son:
 
-Variable	Correlación con Tlog	Interpretación
-T	Alta	Directa, casi lineal
-Tdew	Alta	Ligada al contenido de vapor
-Tpot	Alta	Transformación termodinámica relacionada
-rh	Moderada	Humedad ligada a formación térmica
-VPact	Alta	Presión de vapor depende de temperatura
+| Variable | Correlación con Tlog | Interpretación                                   |
+|----------|----------------------|--------------------------------------------------|
+| T        | Alta                 | Relación directa, casi lineal                    |
+| Tdew     | Alta                 | Ligada al contenido de vapor                     |
+| Tpot     | Alta                 | Transformación termodinámica relacionada         |
+| rh       | Moderada             | Humedad relativa asociada al comportamiento térmico |
+| VPact    | Alta                 | La presión de vapor depende de la temperatura    |
+
