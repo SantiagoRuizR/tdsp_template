@@ -6,7 +6,7 @@ Este documento contiene los resultados del análisis exploratorio de datos.
 
 El dataset contiene 21 variables y representa mediciones meteorológicas tomadas cada 10 minutos durante un periodo continuo del año 2020.
 
-Número de observaciones y variables
+**Número de observaciones y variables**
 
 Total de filas: 52696
 
