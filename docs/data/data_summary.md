@@ -94,6 +94,24 @@ Muy correlacionada con temperatura.
 
 En esta sección se presenta un ranking de las variables más importantes para predecir la variable objetivo. Se utilizan técnicas como la correlación, el análisis de componentes principales (PCA) o la importancia de las variables en un modelo de aprendizaje automático.
 
+Con base en correlación simple (y típicamente confirmado por modelos):
+
+T (Temperatura) – más correlación directa con Tlog
+
+Tdew – humedad absoluta ligada a temperatura
+
+Tpot – temperatura potencial
+
+rh – humedad relativa
+
+VPact – presión de vapor actual
+
+sh – razón de mezcla
+
+rho – densidad del aire
+
+Variables como radicación solar o viento tienen menor influencia directa en Tlog.
+
 ## Relación entre variables explicativas y variable objetivo
 
 En esta sección se presenta un análisis de la relación entre las variables explicativas y la variable objetivo. Se utilizan gráficos como la matriz de correlación y el diagrama de dispersión para entender mejor la relación entre las variables. Además, se pueden utilizar técnicas como la regresión lineal para modelar la relación entre las variables.
