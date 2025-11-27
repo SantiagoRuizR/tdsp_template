@@ -36,6 +36,18 @@ En esta sección se presenta un resumen de la calidad de los datos. Se describe 
 
 En esta sección se describe la variable objetivo. Se muestra la distribución de la variable y se presentan gráficos que permiten entender mejor su comportamiento.
 
+La variable objetivo del dataset es:
+
+Tlog
+
+Una transformación logarítmica de la temperatura u otra magnitud térmica.
+
+Distribución
+
+Tiene una distribución aproximadamente lineal y creciente en el tiempo, probablemente asociada al ciclo anual.
+
+No presenta valores extremos.
+
 ## Variables individuales
 
 En esta sección se presenta un análisis detallado de cada variable individual. Se muestran estadísticas descriptivas, gráficos de distribución y de relación con la variable objetivo (si aplica). Además, se describen posibles transformaciones que se pueden aplicar a la variable.
