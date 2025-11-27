@@ -97,7 +97,7 @@ La variable objetivo es:
 Basado en correlación y patrones lineales iniciales:
 
 1. **T (Temperatura)**
-2. **Tdew (Temperatura del punto de rocío)**
+2. **Tdew (humedad absoluta ligada a temperatura)**
 3. **Tpot (Temperatura potencial)**
 4. **rh (Humedad relativa)**
 5. **VPact (Presión parcial de vapor)**
