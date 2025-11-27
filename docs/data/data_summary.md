@@ -1,120 +1,125 @@
 # Reporte de Datos
 
-Este documento contiene los resultados del análisis exploratorio de datos.
+Este documento presenta los resultados del análisis exploratorio de datos (EDA) realizado sobre el conjunto de mediciones meteorológicas tomadas cada 10 minutos durante el año 2020.
 
-## Resumen general de los datos
+---
 
-El dataset contiene 21 variables y representa mediciones meteorológicas tomadas cada 10 minutos durante un periodo continuo del año 2020.
+## 1. Resumen General del Dataset
 
-**Número de observaciones y variables**
+### 1.1 Dimensiones del conjunto de datos
+- **Número total de filas:** 52,696  
+- **Número total de columnas:** 21  
 
-  • Total de filas: 52696
+### 1.2 Tipos de variables
+- **Variable temporal**  
+  - `date`: cadena originalmente, convertida a tipo datetime.
+- **Variables numéricas continuas**  
+  Temperatura, humedad, presión atmosférica, viento, radiación, entre otras.
+- **Variables binarias**  
+  - `raining`
+- **Variables derivadas**  
+  - `Tpot`
+  - `VPdef`
+  - `Tlog` (variable objetivo)
 
-  • Total de columnas: 21
+### 1.3 Valores faltantes
+- **No se encontraron valores faltantes** en ninguna variable.
 
-**Tipos de variables**
+---
 
-date: variable temporal (string → datetime)
+## 2. Calidad de los Datos
 
-Variables numéricas continuas: temperatura, presión, humedad, viento, radiación, etc.
+Esta sección evalúa la integridad y consistencia general del dataset.
 
-Variables binarias: raining
+### 2.1 Valores faltantes
+- No se identificaron valores nulos.
 
-Variables derivadas: Tpot, VPdef, Tlog
+### 2.2 Valores duplicados
+- No se encontraron duplicados relevantes.
 
-**Valores faltantes**
+### 2.3 Valores extremos
+- Algunas variables presentan valores atípicos esperados:
+  - Picos aislados en velocidad del viento.
+  - Incrementos abruptos en la radiación durante el día.
 
-No se observan valores faltantes.
+### 2.4 Consistencia general
+El dataset muestra:
+- Estabilidad en presión y humedad.
+- Coherencia temporal en las mediciones.
 
-En esta sección se presenta un resumen general de los datos. Se describe el número total de observaciones, variables, el tipo de variables, la presencia de valores faltantes y la distribución de las variables.
+---
 
-## Resumen de calidad de los datos
+## 3. Variable Objetivo
 
-En esta sección se presenta un resumen de la calidad de los datos. Se describe la cantidad y porcentaje de valores faltantes, valores extremos, errores y duplicados. También se muestran las acciones tomadas para abordar estos problemas.
+### 3.1 Descripción
+La variable objetivo es:
 
-## Variable objetivo
+- **`Tlog`** — Transformación logarítmica de una magnitud térmica relacionada con la temperatura.
 
-En esta sección se describe la variable objetivo. Se muestra la distribución de la variable y se presentan gráficos que permiten entender mejor su comportamiento.
+### 3.2 Distribución
+- Tendencia creciente y progresiva a lo largo del tiempo.
+- No presenta valores extremos significativos.
+- Fuerte correlación con variables térmicas (`T`, `Tdew`, `Tpot`).
 
-La variable objetivo del dataset es:
+---
 
-Tlog
+## 4. Análisis de Variables Individuales
 
-Una transformación logarítmica de la temperatura u otra magnitud térmica.
+### 4.1 Temperatura (`T`)
+- Rango aproximado: **–2°C a 20°C**.
+- Distribución **unimodal**.
+- Alta correlación con `Tpot`, `Tdew` y `Tlog`.
 
-Distribución
+### 4.2 Humedad relativa (`rh`)
+- Valores entre **70% y 95%**.
+- Comportamiento estable, típico de un clima húmedo.
 
-Tiene una distribución aproximadamente lineal y creciente en el tiempo, probablemente asociada al ciclo anual.
+### 4.3 Velocidad del viento (`wv`)
+- Valores típicos entre **0.0 y ~3 m/s**.
+- Picos aislados de hasta **~6 m/s**.
 
-No presenta valores extremos.
+### 4.4 Radiación solar (`SWDR`, `PAR`)
+- Tramos prolongados en cero durante la noche.
+- Aumentos marcados durante el día.
 
-## Variables individuales
+### 4.5 Presión atmosférica (`p`)
+- Estabilidad alrededor de **1008 hPa**.
+- Sin variaciones bruscas.
 
-En esta sección se presenta un análisis detallado de cada variable individual. Se muestran estadísticas descriptivas, gráficos de distribución y de relación con la variable objetivo (si aplica). Además, se describen posibles transformaciones que se pueden aplicar a la variable.
+### 4.6 Variable objetivo (`Tlog`)
+- Comportamiento suavemente creciente en el tiempo.
+- Alta correlación con la temperatura.
 
-A continuación se resume el comportamiento de las principales variables:
+---
 
-Temperatura (T)
+## 5. Ranking de Importancia de Variables
 
-Rango típico: ~ -2°C a 20°C en la muestra inicial.
+Basado en correlación y patrones lineales iniciales:
 
-Distribución unimodal.
+1. **T (Temperatura)**
+2. **Tdew (Temperatura del punto de rocío)**
+3. **Tpot (Temperatura potencial)**
+4. **rh (Humedad relativa)**
+5. **VPact (Presión parcial de vapor)**
+6. **sh (Razón de mezcla)**
+7. **rho (Densidad del aire)**
 
-Alta correlación con Tpot y Tdew.
+Variables con menor influencia directa sobre `Tlog`:
+- Radiación solar (`SWDR`, `PAR`)
+- Velocidad del viento (`wv`)
 
-Humedad relativa (rh)
+---
 
-Valores entre 70% y 95%.
+## 6. Relación entre Variables Explicativas y la Variable Objetivo
 
-Muy estable, coherente con clima húmedo.
+El análisis revela que:
 
-Velocidad del viento (wv)
+- La **matriz de correlación** muestra fuerte dependencia entre `Tlog` y las variables térmicas.
+- Los **diagramas de dispersión** indican relaciones casi lineales con la temperatura.
+- Un modelo como la **regresión lineal** puede representar eficazmente estas relaciones.
+- La estructura temporal del dataset sugiere una influencia marcada del **ciclo anual** en las variables térmicas.
 
-Comportamiento de baja intensidad, valores entre 0.0 y ~3 m/s.
-
-Algunos picos aislados (máximo ~6 m/s).
-
-Radiación (SWDR, PAR)
-
-Largos tramos en cero (nocturnos).
-
-Subidas bruscas durante el día (no presentes en primeros registros cargados).
-
-Presión atmosférica (p)
-
-Muy estable alrededor de ~1008 hPa.
-
-Tlog (variable objetivo)
-
-Aumenta suavemente con el tiempo según los primeros registros.
-
-Muy correlacionada con temperatura.
-
-## Ranking de variables
-
-En esta sección se presenta un ranking de las variables más importantes para predecir la variable objetivo. Se utilizan técnicas como la correlación, el análisis de componentes principales (PCA) o la importancia de las variables en un modelo de aprendizaje automático.
-
-Con base en correlación simple (y típicamente confirmado por modelos):
-
-T (Temperatura) – más correlación directa con Tlog
-
-Tdew – humedad absoluta ligada a temperatura
-
-Tpot – temperatura potencial
-
-rh – humedad relativa
-
-VPact – presión de vapor actual
-
-sh – razón de mezcla
-
-rho – densidad del aire
-
-Variables como radicación solar o viento tienen menor influencia directa en Tlog.
-
-## Relación entre variables explicativas y variable objetivo
-
-En esta sección se presenta un análisis de la relación entre las variables explicativas y la variable objetivo. Se utilizan gráficos como la matriz de correlación y el diagrama de dispersión para entender mejor la relación entre las variables. Además, se pueden utilizar técnicas como la regresión lineal para modelar la relación entre las variables.
+---
 
 Las relaciones más fuertes observadas son:
 
