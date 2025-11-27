@@ -115,3 +115,12 @@ Variables como radicación solar o viento tienen menor influencia directa en Tlo
 ## Relación entre variables explicativas y variable objetivo
 
 En esta sección se presenta un análisis de la relación entre las variables explicativas y la variable objetivo. Se utilizan gráficos como la matriz de correlación y el diagrama de dispersión para entender mejor la relación entre las variables. Además, se pueden utilizar técnicas como la regresión lineal para modelar la relación entre las variables.
+
+Las relaciones más fuertes observadas son:
+
+Variable	Correlación con Tlog	Interpretación
+T	Alta	Directa, casi lineal
+Tdew	Alta	Ligada al contenido de vapor
+Tpot	Alta	Transformación termodinámica relacionada
+rh	Moderada	Humedad ligada a formación térmica
+VPact	Alta	Presión de vapor depende de temperatura
