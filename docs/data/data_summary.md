@@ -4,6 +4,24 @@ Este documento contiene los resultados del análisis exploratorio de datos.
 
 ## Resumen general de los datos
 
+El dataset contiene 21 variables y representa mediciones meteorológicas tomadas cada 10 minutos durante un periodo continuo del año 2020.
+
+Número de observaciones y variables
+
+Total de filas: 52696
+
+Total de columnas: 21
+
+Tipos de variables
+
+date: variable temporal (string → datetime)
+
+Variables numéricas continuas: temperatura, presión, humedad, viento, radiación, etc.
+
+Variables binarias: raining
+
+Variables derivadas: Tpot, VPdef, Tlog
+
 En esta sección se presenta un resumen general de los datos. Se describe el número total de observaciones, variables, el tipo de variables, la presencia de valores faltantes y la distribución de las variables.
 
 ## Resumen de calidad de los datos
