@@ -8,9 +8,9 @@ El dataset contiene 21 variables y representa mediciones meteorológicas tomadas
 
 **Número de observaciones y variables**
 
-Total de filas: 52696
+• Total de filas: 52696
 
-Total de columnas: 21
+• Total de columnas: 21
 
 Tipos de variables
 
