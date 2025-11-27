@@ -40,6 +40,44 @@ En esta sección se describe la variable objetivo. Se muestra la distribución d
 
 En esta sección se presenta un análisis detallado de cada variable individual. Se muestran estadísticas descriptivas, gráficos de distribución y de relación con la variable objetivo (si aplica). Además, se describen posibles transformaciones que se pueden aplicar a la variable.
 
+A continuación se resume el comportamiento de las principales variables:
+
+Temperatura (T)
+
+Rango típico: ~ -2°C a 20°C en la muestra inicial.
+
+Distribución unimodal.
+
+Alta correlación con Tpot y Tdew.
+
+Humedad relativa (rh)
+
+Valores entre 70% y 95%.
+
+Muy estable, coherente con clima húmedo.
+
+Velocidad del viento (wv)
+
+Comportamiento de baja intensidad, valores entre 0.0 y ~3 m/s.
+
+Algunos picos aislados (máximo ~6 m/s).
+
+Radiación (SWDR, PAR)
+
+Largos tramos en cero (nocturnos).
+
+Subidas bruscas durante el día (no presentes en primeros registros cargados).
+
+Presión atmosférica (p)
+
+Muy estable alrededor de ~1008 hPa.
+
+Tlog (variable objetivo)
+
+Aumenta suavemente con el tiempo según los primeros registros.
+
+Muy correlacionada con temperatura.
+
 ## Ranking de variables
 
 En esta sección se presenta un ranking de las variables más importantes para predecir la variable objetivo. Se utilizan técnicas como la correlación, el análisis de componentes principales (PCA) o la importancia de las variables en un modelo de aprendizaje automático.
