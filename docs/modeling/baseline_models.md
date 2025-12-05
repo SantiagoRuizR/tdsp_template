@@ -18,6 +18,8 @@ Se usó como línea base una **Regresión Lineal** (versión predictiva con scik
 | modelo              | val_r2  | test_r2 | test_mse | test_mae |
 |---------------------|---------|---------|----------|----------|
 | linear_predictive   | ~0.976  | ~0.976  | ~1.378   | ~0.903   |
+| gradient_boosting   | ~0.979  | ~0.980  | ~1.173   | ~0.817   |
+| random_forest       | ~0.978  | ~0.979  | ~1.254   | ~0.848   |
 
 *Nota:* valores obtenidos con un muestreo rápido (≈5k train / 2k test) para validar el flujo; el entrenamiento completo puede variar ligeramente.
 
@@ -25,6 +27,7 @@ Se usó como línea base una **Regresión Lineal** (versión predictiva con scik
 - El baseline lineal ya captura ~97% de la varianza de `Tlog`, coherente con relaciones casi lineales entre variables térmicas y la meta.
 - La versión econométrica permite inspeccionar betas y significancia (cuando statsmodels está instalado).
 - Limitación: no modela no linealidades residuales ni interacciones complejas más allá de los términos polinómicos básicos.
+- Comparación: los ensambles (GBR/RF) mejoran MAE y ligeramente R², validando la necesidad de modelos no lineales como siguiente escalón tras la línea base.
 
 ## Conclusiones
 - El baseline ofrece un punto de partida sólido; sin embargo, modelos de ensamble (RandomForest, Gradient Boosting) superan ligeramente el desempeño en R² y error absoluto.

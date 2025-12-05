@@ -15,6 +15,8 @@ Prever la variable `Tlog` (temperatura transformada) para apoyar decisiones oper
 - **Selección de características**: estrategia híbrida (Lasso, mutual information, importancia de RandomForest) para reducir dimensionalidad y priorizar señales.
 - **Modelos evaluados**: Linear (predictivo/econométrico), Lasso, Ridge, ElasticNet, RandomForest, GradientBoosting, KNN, MLP; opcionales XGBoost/LightGBM/CatBoost (no instalados en la corrida mostrada).
 - **Búsqueda**: RandomizedSearchCV optimizando R², con CV=3 (corrida rápida) y n_iter=5 en muestra recortada; guardar modelos en `models/`.
+- **Justificación selección/extracción**: Lasso aporta sparsity lineal, MI captura dependencias no lineales locales y RF provee importancia global; la unión conserva señales complementarias. Hiperparámetros: `k=20` para MI y `top_frac=0.3` en RF para evitar sobrepoda; grid log-space en regulares.
+- **Espacios de búsqueda (ejemplos)**: L1/L2 (alphas logspace), ElasticNet (alpha + l1_ratio), RF/GBR (n_estimators, max_depth, subsample/learning_rate), SVR (C/gamma/epsilon), KNN (k, p, weights), MLP (capas y alpha). n_iter=25, CV=5 en corrida estándar; n_iter=5, CV=3 en validación rápida.
 
 ## Evaluación del Modelo
 | modelo             | val_r2  | test_r2 | test_mse | test_mae |
@@ -35,6 +37,7 @@ Interpretación: los ensambles capturan ligeras no linealidades y ofrecen menor 
   - Probar XGBoost/LightGBM si las dependencias están disponibles; pueden mejorar eficiencia y rendimiento.
   - Monitorear deriva de datos y recalibrar winsorización y selección de características periódicamente.
   - Preparar artefactos de inferencia (pipeline + modelo) para despliegue y documentar el contrato de entrada/salida.
+  - Analizar residuales (distribución y outliers) y, si procede, incorporar componentes temporales (lags/estacionalidad) en modelos futuros.
 
 ## Referencias
 - Documentación scikit-learn (ensemble, linear models, model_selection).  
