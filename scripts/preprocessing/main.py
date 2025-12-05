@@ -50,6 +50,10 @@ class Winsorizer(BaseEstimator, TransformerMixin):
         upper = np.broadcast_to(self.upper_, X.shape)
         return np.clip(X, lower, upper)
 
+    def get_feature_names_out(self, input_features=None):
+        """Preserva los nombres de entrada para compatibilidad con ColumnTransformer."""
+        return np.array(input_features) if input_features is not None else None
+
 
 @dataclass
 class PreprocessArtifacts:
