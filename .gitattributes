@@ -1,0 +1,14 @@
+
+*.ipynb linguist-vendored
+
+
+*.png linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.gif linguist-vendored
+
+
+data/* linguist-vendored
+
+
+*.py linguist-language=Python
