@@ -44,8 +44,8 @@ Proyecto del Diplomado en Machine Learning y Data Science Avanzado (UNAL) - Modu
 6. Selección de features: `python scripts/feature_selection/main.py --data-dir data/processed --output-dir data/selected --method hybrid`.
 7. Entrenamiento (sin MLflow): `python scripts/training/main.py --data-dir data/selected --output-dir models --models lasso ridge random_forest gradient_boosting linear_predictive`.
 8. Entrenamiento con MLflow (tracking local en `mlruns/`):
-   ```bash
-   python - <<'PY'
+
+   ```python
    import os
    from pathlib import Path
    from scripts.training.model_registry import available_specs
@@ -75,7 +75,6 @@ Proyecto del Diplomado en Machine Learning y Data Science Avanzado (UNAL) - Modu
        tracking_uri=Path("mlruns").resolve().as_uri(),
    )
    print("MLflow tracking URI:", uri)
-   PY
    ```
    Levantar UI: `mlflow ui --backend-store-uri "<uri impreso>"`.
 
