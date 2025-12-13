@@ -39,8 +39,8 @@ Plantilla TDSP orientada a MLOps para modelar variables meteorológicas medidas 
 6. Selección de features: `python scripts/feature_selection/main.py --data-dir data/processed --output-dir data/selected --method hybrid`.
 7. Entrenamiento (sin MLflow): `python scripts/training/main.py --data-dir data/selected --output-dir models --models lasso ridge random_forest gradient_boosting linear_predictive`.
 8. Entrenamiento con MLflow (tracking local):
-   ```bash
-   python - <<'PY'
+
+   ```python
    from pathlib import Path
    import pandas as pd
    from scripts.training.model_registry import available_specs
@@ -67,7 +67,6 @@ Plantilla TDSP orientada a MLOps para modelar variables meteorológicas medidas 
        tracking_uri=Path("mlruns").resolve().as_uri(),
    )
    print("MLflow tracking URI:", uri)
-   PY
    ```
    Abrir UI: `mlflow ui --backend-store-uri "<uri>"`.
 
