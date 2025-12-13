@@ -4,18 +4,7 @@ Version: 0.1.0
 Summary: Descripción del proyecto
 Author-email: autor1 <correo@correo.com>
 Requires-Python: >3.8
-License-File: LICENSE
-Requires-Dist: fastapi>=0.124.2
-Requires-Dist: favicon>=0.7.0
-Requires-Dist: ipykernel>=6.29.5
 Requires-Dist: matplotlib>=3.7.5
 Requires-Dist: numpy
 Requires-Dist: pandas>=2.0.3
-Requires-Dist: pip>=25.0.1
-Requires-Dist: pmdarima>=2.0.4
-Requires-Dist: prophet>=1.2.1
-Requires-Dist: pydantic>=2.10.6
 Requires-Dist: scikit-learn>=1.3.2
-Requires-Dist: statsmodels>=0.14.1
-Requires-Dist: uvicorn>=0.33.0
-Dynamic: license-file
