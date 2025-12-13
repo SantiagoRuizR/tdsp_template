@@ -1,57 +1,54 @@
 # Project Charter - Entendimiento del Negocio
 
 ## Nombre del Proyecto
-
-Pronóstico del clima de Munich básado en indicadores meteorológicos.
+Pronóstico del clima de Múnich basado en indicadores meteorológicos (TDSP – Diplomado ML & Data Science Avanzado, UNAL).
 
 ## Objetivo del Proyecto
-
-Desarrollar modelos predictivos de temperatura basados en Machine Learning utilizando datos meteorológicos de alta resolución, y así, identificar patrones microclimáticos locales. El pronostico del clima por medio de modelos de Machine Learning puede beneficiar a noticieros locales, navegantes y al público en general, ya que pueden ser más robustos y son capaces de identificar más patrones que los métodos tradicionales.
+Construir modelos predictivos de la variable térmica `Tlog` usando datos meteorológicos de alta resolución (cada 10 minutos en 2020), priorizando:
+- Fiabilidad para decisiones operativas (energía, ventilación, riego).
+- Identificación de señales clave (presión, humedad, viento, radiación) para orientar mantenimiento de sensores y calidad de datos.
+- Ciclo MLOps reproducible: adquisición, preprocesamiento, selección, entrenamiento, tracking (MLflow) y serving (API/Streamlit).
 
 ## Alcance del Proyecto
+### Incluye
+- Datos históricos 2020 (cada 10 minutos) con 20 variables meteorológicas.
+- Preprocesamiento reproducible (imputación, winsorización, polinomios opcionales, escalado) y selección de características (Lasso, MI, RandomForest).
+- Entrenamiento de un portafolio tabular: OLS/econométrico, Lasso/Ridge/ElasticNet, RandomForest, GradientBoosting, SVR, KNN, MLP; opcionales: XGBoost/LightGBM/CatBoost si están instalados.
+- Tracking de experimentos con MLflow y artefactos versionados.
+- Serving: API FastAPI (`main_api.py`) y app Streamlit (`main_streamlit.py`) usando el mismo preprocesador/selección.
 
-### Incluye:
-
-- Se tienen datos históricos de indicadores meteorológicos de 2020 tomados cada 10 minutos. 
-- Obtener datos de temperatura coherentes con los valores medidos.
-- Se busca pronosticar adecuadamente la temperatura de los días posteriores basado en información de los días o semanas previas.
-
-### Excluye:
-
-- No se cuenta con información anterior o posterior al 2020.
+### Excluye
+- Datos fuera del año 2020.
+- Modelos deep learning secuenciales (RNN/LSTM/GRU/Transformers) en esta iteración; se priorizó modelos tabulares interpretables y Prophet en notebooks.
 
 ## Metodología
+- Marco TDSP/MLOps: adquisición → EDA → preprocesamiento → selección → entrenamiento → evaluación → deployment.
+- Validación: RandomizedSearchCV con métrica R² (train/val/test), más MSE/MAE de control; muestreo rápido (~5k/2k) para iterar y full-data para versión final.
+- Tracking: MLflow (runs anidados por modelo, trazas de búsqueda y artefactos).
+- Serving: FastAPI para scoring batch/online y Streamlit para exploración manual/archivo.
 
-Se empleará un enfoque secuencial de Deep Learning. Para ello se comparará entre las arquitecturas de RNN (Redes Neuronales Recurrentes), LSTM (Long Short-Term Memory), GRU y Time-Series Transformers, para los modelos de los cuales se parte desde cero, y se comparará con los resultados generados por un modelos preentrenado cómo Prophet. Estos serán evaluados bajo críterios como Walk-Fordward Validation para un correcto entendimiento de las series de tiempo.
-
-## Cronograma
-
-| Etapa | Duración Estimada | Fechas |
-|------|---------|-------|
-| Entendimiento del negocio y carga de datos | 1 semana | del 17 de noviembre al 23 de noviembre |
-| Preprocesamiento, análisis exploratorio | 1 semana | del 24 de noviembre al 30 de noviembre |
-| Modelamiento y extracción de características | 1 semana | del 1 de diciembre al 7 de diciembre |
-| Despliegue | 1 semana | del 8 de diciembre al 13 de diciembre |
-| Evaluación y entrega final | 1 semana | del 8 de diciembre al 13 de diciembre |
-
-Hay que tener en cuenta que estas fechas son de ejemplo, estas deben ajustarse de acuerdo al proyecto.
+## Cronograma (referencial)
+| Etapa | Duración | Fechas (referencia) |
+|-------|----------|---------------------|
+| Entendimiento & datos | 1 semana | 17–23 nov |
+| EDA & preprocesamiento | 1 semana | 24–30 nov |
+| Selección & modelado | 1 semana | 1–7 dic |
+| Tracking & deployment (API/Streamlit) | 1 semana | 8–13 dic |
+| Evaluación y entrega | 1 semana | 8–13 dic |
 
 ## Equipo del Proyecto
-
-- Santiago Ruiz Rozo <sruiz899@gmail.com>
-- Pablo Alejandro Reyes Granados <alejogranados229@gmail.com>
-- Kevin Andrés Martínez Martínez <kevinmartinez.ingbiom@gmail.com>
-
-## Presupuesto
-
-N/A
+- Santiago Ruiz Rozo — sruiz899@gmail.com
+- Pablo Alejandro Reyes Granados — alejogranados229@gmail.com
+- Kevin Andrés Martínez Martínez — kevinmartinez.ingbiom@gmail.com
 
 ## Stakeholders
-
-- Jorge E. Camargo, PhD
-- Profesor del modulo de **Metodologías Ágiles para el Desarrollo de Proyectos con Machine Learning**
+- Dirección de Operaciones/Energía: usuarios directos de las predicciones para planificación operativa (ventilación, climatización, riego, eficiencia energética).
+- Facilities/Infraestructura: uso de pronósticos para gestión de equipos HVAC y mantenimiento preventivo.
+- Ciencia de Datos/Analytics interno: custodia del pipeline y evolución de modelos.
+- TI/DevOps: operación de APIs/Streamlit y observabilidad de los servicios.
+- Sponsor académico: Jorge E. Camargo, PhD (módulo Metodologías Ágiles para ML, UNAL).
 
 ## Aprobaciones
-
-- Jorge E. Camargo, PhD
+- Sponsor académico: Jorge E. Camargo, PhD.
+- Revisión técnica: equipo del diplomado (según iteraciones de entrega).
 

@@ -1,14 +1,6 @@
-.gitattributes
 .gitignore
-LICENSE
 README.md
 pyproject.toml
-requirements.txt
-uv.lock
-.vscode/settings.json
-data/processed/metadata.json
-data/processed/preprocessor.joblib
-data/selected/metadata_selection.json
 docs/acceptance/exit_report.md
 docs/business_understanding/project_charter.md
 docs/data/data_definition.md
@@ -16,38 +8,10 @@ docs/data/data_dictionary.md
 docs/data/data_summary.md
 docs/deployment/deploymentdoc.md
 docs/modeling/baseline_models.md
-docs/modeling/econometric_interpretation.md
 docs/modeling/model_report.md
-experiments/eda/Hist Dependat.png
-experiments/eda/Missings.png
-experiments/eda/PCA scree.png
-experiments/eda/PCA.png
-experiments/eda/Pairplot.png
-experiments/eda/corr kendall.png
-experiments/eda/corr spearman.png
-experiments/eda/dialy mean temp.png
-experiments/eda/histograms/hist 1.png
-experiments/eda/histograms/hist 10.png
-experiments/eda/histograms/hist 11.png
-experiments/eda/histograms/hist 12.png
-experiments/eda/histograms/hist 2.png
-experiments/eda/histograms/hist 3.png
-experiments/eda/histograms/hist 4.png
-experiments/eda/histograms/hist 5.png
-experiments/eda/histograms/hist 6.png
-experiments/eda/histograms/hist 7.png
-experiments/eda/histograms/hist 8.png
-experiments/eda/histograms/hist 9.png
-models_fast/gradient_boosting.joblib
-models_fast/lasso.joblib
-models_fast/linear_predictive.joblib
-models_fast/random_forest.joblib
-models_fast/ridge.joblib
-models_fast/training_report.csv
 scripts/data_acquisition/main.py
 scripts/eda/main.py
 scripts/evaluation/main.py
-scripts/feature_selection/main.py
 scripts/preprocessing/main.py
 scripts/training/main.py
 src/nombre_paquete/__init__.py
